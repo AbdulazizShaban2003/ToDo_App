@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/auth/screens/onBoarding_view.dart';
+import 'package:todo_app/features/auth/screens/splash_screen.dart';
 import 'package:todo_app/features/home/home_view.dart';
 
 void main() {
@@ -40,8 +42,8 @@ class MyApp extends StatelessWidget {
             fontSize: 17,
           ),
           titleLarge: TextStyle(
-            color: Colors.black,
-            fontSize: 40,
+            color: Colors.white,
+            fontSize: 60,
             fontWeight: FontWeight.w500,
           ),
           titleMedium: TextStyle(
@@ -50,8 +52,10 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
+
       ),
-      home: const HomeView(),
+
+      home: const OnboardingView(),
     );
   }
 }
