@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/core/utils/app_color.dart';
-import 'package:todo_app/features/auth/widgets/custom_body_onBoarding_view.dart';
+import 'package:todo_app/core/themes/app_color.dart';
+import 'package:todo_app/features/auth/presentation/widgets/custom_body_onBoarding_view.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});

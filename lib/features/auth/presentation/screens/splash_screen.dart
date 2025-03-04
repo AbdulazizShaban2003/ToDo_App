@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/core/utils/app_color.dart';
+import 'package:todo_app/core/themes/app_color.dart';
 import 'package:todo_app/core/utils/app_strings.dart';
-import '../../../core/utils/app_asstes.dart';
+import '../../../../core/utils/app_asstes.dart' show AppAsstes;
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
