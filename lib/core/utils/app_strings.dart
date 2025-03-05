@@ -28,4 +28,6 @@ class MyString {
   static const String titleOnBoardingPage3 = "Organaize your tasks";
   static const String subtitleOnBoardingPage3 =
       "You can organize your daily tasks by adding your tasks into separate categories";
+  static const String onBoardingKey = "onBoarding";
+
 }

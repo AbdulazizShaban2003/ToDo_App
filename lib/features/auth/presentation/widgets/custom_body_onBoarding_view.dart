@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/core/themes/app_color.dart';
 import 'package:todo_app/core/utils/app_strings.dart';
 import 'package:todo_app/features/auth/data/onBoarding_model.dart';
-import 'package:todo_app/features/auth/presentation/components/dot_indicator.dart' show DotIndicator;
+import 'package:todo_app/features/auth/presentation/components/dot_indicator.dart'
+    show DotIndicator;
 import 'package:todo_app/features/auth/presentation/widgets/custom_buttom_onBoarding.dart';
+import 'package:todo_app/features/home/home_view.dart';
 
 class CustomBodyOnBoardingView extends StatelessWidget {
   final PageController controller;
@@ -18,19 +20,27 @@ class CustomBodyOnBoardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextTheme theme = Theme.of(context).textTheme;
+    TextTheme theme = Theme
+        .of(context)
+        .textTheme;
 
     return Column(
       children: [
         index == 2
             ? Container()
             : Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                MyString.skip,
-                style: TextStyle(color: AppColor.GreyColor, fontSize: 25),
-              ),
+          alignment: Alignment.topLeft,
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => HomeView()));
+            },
+            child: Text(
+              MyString.skip,
+              style: TextStyle(color: AppColor.GreyColor, fontSize: 25),
             ),
+          ),
+        ),
         SizedBox(height: 30),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,10 +71,8 @@ class CustomBodyOnBoardingView extends StatelessWidget {
         ),
         Spacer(),
 
-        CustomButtomOnBoarding(index: index, controller: controller),
+        CustomButtonOnBoarding(index: index, controller: controller),
       ],
     );
   }
 }
-
-
