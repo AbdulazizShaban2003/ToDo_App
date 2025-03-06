@@ -29,5 +29,7 @@ class MyString {
   static const String subtitleOnBoardingPage3 =
       "You can organize your daily tasks by adding your tasks into separate categories";
   static const String onBoardingKey = "onBoarding";
+  static const String subtitleEmptyTask = "What do you want to do today?\nTap + to add your tasks";
+
 
 }
