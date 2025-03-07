@@ -1,11 +1,12 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
-import 'package:todo_app/core/utils/app_asstes.dart';
-import 'package:todo_app/core/utils/app_strings.dart';
+import 'package:todo_app/features/home/components/no_task.dart';
 import 'package:todo_app/features/home/widget/custom_fab.dart';
 import '../../core/themes/app_color.dart';
+import 'components/build_container.dart';
+import 'components/task.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -62,18 +63,49 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             SizedBox(height: 70),
-            Lottie.asset(AppAsstes.emptyCheckList, width: 350, height: 350),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                textAlign: TextAlign.center,
-                MyString.subtitleEmptyTask,
-                style: theme.titleMedium!.copyWith(
-                  color: AppColor.whiteColor,
-                  fontSize: 25,
-                ),
-              ),
+            InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (_) {
+                    return Container(
+                      color: AppColor.deepGreyColor,
+                      width: double.infinity,
+                      height: 250,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            BuildContainer(
+                              theme: theme,
+                              action: 'Task Completed',
+                              onPressed: () {},
+                              color: AppColor.primaryLightColor,
+                            ),
+                            BuildContainer(
+                              theme: theme,
+                              action: 'DELETE TASK',
+                              onPressed: () {},
+                              color: AppColor.redColor,
+                            ),
+                            BuildContainer(
+                              theme: theme,
+                              action: 'CANCEL',
+                              onPressed: () {},
+                              color: AppColor.primaryLightColor,
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                );
+              },
+              child: CustomTask(theme: theme),
             ),
+
+            // CustomNotask(theme: theme),
           ],
         ),
       ),

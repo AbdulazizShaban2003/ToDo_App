@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/features/home/task_view.dart';
 
 import '../../../core/themes/app_color.dart';
 
@@ -7,9 +8,9 @@ class FAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (_)=>const AddTask()));
       },
       child: Material(
         borderRadius: BorderRadius.circular(15),
