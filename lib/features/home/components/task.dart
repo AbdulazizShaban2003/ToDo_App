@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/themes/app_color.dart';
+import '../../../core/utils/size_manager.dart';
 
 class CustomTask extends StatelessWidget {
   const CustomTask({
@@ -15,13 +16,13 @@ class CustomTask extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 170,
+      height: SizeManager.appSizeWidth(context: context, widthApp: 0.42),
       decoration: BoxDecoration(
         color: AppColor.redColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:  EdgeInsets.all(SizeManager.appSizeWidth(context: context, widthApp: 0.02)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -49,10 +50,10 @@ class CustomTask extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  color: Colors.white,
-                  width: 2,
-                  height: 80,
-                  margin: EdgeInsets.only(right: 10),
+                  color:AppColor.whiteColor,
+                  width: SizeManager.appSizeWidth(context: context, widthApp: 0.004),
+                  height: SizeManager.appSizeHeight(context: context, heightApp: 0.1),
+                  margin: EdgeInsets.only(right: SizeManager.appSizeWidth(context: context, widthApp: 0.02)),
                 ),
                 RotatedBox(
                   quarterTurns: 3,

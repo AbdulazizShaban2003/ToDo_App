@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/services/di.dart';
-import 'package:todo_app/features/home/home_view.dart';
+import 'package:todo_app/features/home/views/home_view.dart';
 
 import '../../../../core/database/cache_helper.dart';
 import '../../../../core/themes/app_color.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/core/utils/size_manager.dart';
 
-import '../../../core/themes/app_color.dart';
 
 class BuildContainer extends StatelessWidget {
   const BuildContainer({
@@ -18,7 +18,7 @@ class BuildContainer extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: double.infinity,
-        height: 60,
+        height: SizeManager.appSizeHeight(context: context, heightApp: 0.06),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(12),

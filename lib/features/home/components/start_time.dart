@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/core/utils/app_strings.dart';
 
 import '../../../core/themes/app_color.dart';
+import '../../../core/utils/size_manager.dart';
 import '../controller/task_controller.dart';
 
 class StartTime extends StatelessWidget {
@@ -19,17 +21,16 @@ class StartTime extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Start Time", style: theme.displayMedium),
-        const SizedBox(height: 10),
+        Text(MyString.startTime, style: theme.displayMedium),
+         SizedBox(height: SizeManager.appSizeHeight(context: context, heightApp: 0.015)),
         SizedBox(
-          width: 170,
+          width: SizeManager.appSizeWidth(context: context, widthApp: 0.42),
           child: TextFormField(
             style: theme.displayMedium,
 
             controller: taskController.startTimeController,
             readOnly: true,
             decoration: InputDecoration(
-              hintText: "Start Time",
               suffixIcon: InkWell(
                 onTap: () => taskController.selectTime(
                     context, taskController.startTimeController),

@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class MyString {
   static const String mainTitle = "My Tasks";
   static const String deletedTask = "This task was deleted";
@@ -30,6 +32,27 @@ class MyString {
       "You can organize your daily tasks by adding your tasks into separate categories";
   static const String onBoardingKey = "onBoarding";
   static const String subtitleEmptyTask = "What do you want to do today?\nTap + to add your tasks";
+  static const String startTime = "Start Time";
+  static const String endTime = "EndTime";
+  static const String createTask = "Creeat Task";
+  static const String date = "Date";
+  static const String title = "Title";
+  static const String note = "Note";
+  static const String hintTextTitle = "Enter title here";
+  static const String hintTextNote = "Enter note here";
+  static String hintTextDate = DateFormat.yMd().format(DateTime.now());
+  static const String addTask = "Add Task";
+  static const String taskComplete = "Task Completed";
+  static const String deleteTaske = "DELETE TASK";
+  static const String cancel = "CANCEL";
+  static const String today = "Today";
+  static const String color = "Color";
+
+
+
+
+
+
 
 
 }

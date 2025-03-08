@@ -5,7 +5,7 @@ import 'package:todo_app/features/auth/data/onBoarding_model.dart';
 import 'package:todo_app/features/auth/presentation/components/dot_indicator.dart'
     show DotIndicator;
 import 'package:todo_app/features/auth/presentation/widgets/custom_buttom_onBoarding.dart';
-import 'package:todo_app/features/home/home_view.dart';
+import 'package:todo_app/features/home/views/home_view.dart';
 
 class CustomBodyOnBoardingView extends StatelessWidget {
   final PageController controller;

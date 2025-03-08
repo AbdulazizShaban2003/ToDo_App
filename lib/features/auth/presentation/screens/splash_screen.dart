@@ -3,7 +3,7 @@ import 'package:todo_app/core/database/cache_helper.dart';
 import 'package:todo_app/core/themes/app_color.dart';
 import 'package:todo_app/core/utils/app_strings.dart';
 import 'package:todo_app/features/auth/presentation/screens/onBoarding_view.dart';
-import 'package:todo_app/features/home/home_view.dart';
+import 'package:todo_app/features/home/views/home_view.dart';
 import '../../../../core/services/di.dart';
 import '../../../../core/utils/app_asstes.dart' show AppAsstes;
 

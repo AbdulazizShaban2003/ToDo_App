@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/themes/app_color.dart';
+import 'package:todo_app/core/utils/app_strings.dart';
+import 'package:todo_app/core/utils/size_manager.dart';
 
 import '../controller/task_controller.dart';
 
@@ -19,17 +21,16 @@ class EndTime extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("End Time", style: theme.displayMedium),
-        const SizedBox(height: 10),
+        Text(MyString.endTime, style: theme.displayMedium),
+         SizedBox(height: SizeManager.appSizeHeight(context: context, heightApp: 0.015)),
         SizedBox(
-          width: 170,
+          width: SizeManager.appSizeWidth(context: context, widthApp: 0.42),
           child: TextFormField(
             style: theme.displayMedium,
 
             controller: taskController.endTimeController,
             readOnly: true,
             decoration: InputDecoration(
-              hintText: "End Time",
               suffixIcon: InkWell(
                 onTap: () => taskController.selectTime(
                     context, taskController.endTimeController),
