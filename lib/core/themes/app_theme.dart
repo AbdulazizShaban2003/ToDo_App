@@ -19,4 +19,18 @@ ThemeData lightTheme = ThemeData(
     titleLarge: AppStyles.textWhite60W500,
     titleMedium: AppStyles.textBlack16W500,
   ),
+  inputDecorationTheme: InputDecorationTheme(
+    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+    fillColor: const Color(0xff1D1D1D),
+    filled: true,
+    hintStyle: TextStyle(color: AppColor.whiteColor, fontSize: 21),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: Colors.grey),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: Colors.white),
+    ),
+  ),
 );
