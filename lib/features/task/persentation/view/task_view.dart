@@ -1,26 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart' show Provider;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/core/themes/app_color.dart';
 import 'package:todo_app/core/utils/app_strings.dart';
 import 'package:todo_app/features/home/components/build_container.dart';
-import 'package:todo_app/features/home/controller/task_controller.dart';
-import '../../../core/utils/size_manager.dart';
+import 'package:todo_app/features/task/data/database/task_database.dart';
+import '../../../../core/utils/size_manager.dart';
+import '../../../states/cubit/task_cubit.dart';
 import '../components/end_time.dart';
 import '../components/start_time.dart';
-import '../widgets/custom_date_input.dart';
-import '../widgets/custom_list_color_task.dart' show CustomListOfColorTask;
-import '../widgets/custom_note_input.dart';
-import '../widgets/custom_title_input.dart';
+import '../widget/custom_date_input.dart';
+import '../widget/custom_list_color_task.dart' show CustomListOfColorTask;
+import '../widget/custom_note_input.dart';
+import '../widget/custom_title_input.dart';
 
 class AddTask extends StatelessWidget {
   const AddTask({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final taskController = Provider.of<TaskController>(context);
-
+    TaskDatabase taskDatabase = TaskDatabase();
     TextTheme theme = Theme.of(context).textTheme;
+    final taskCubit = context.read<TaskCubit>();
 
     return Scaffold(
       backgroundColor: AppColor.blackColor,
@@ -70,7 +71,7 @@ class AddTask extends StatelessWidget {
                   heightApp: 0.03,
                 ),
               ),
-              CustomDateInput(theme: theme, taskController: taskController),
+              CustomDateInput(theme: theme),
               SizedBox(
                 height: SizeManager.appSizeHeight(
                   context: context,
@@ -79,10 +80,7 @@ class AddTask extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  StartTime(theme: theme, taskController: taskController),
-                  EndTime(theme: theme, taskController: taskController),
-                ],
+                children: [StartTime(theme: theme), EndTime(theme: theme)],
               ),
               SizedBox(
                 height: SizeManager.appSizeHeight(
@@ -91,7 +89,7 @@ class AddTask extends StatelessWidget {
                 ),
               ),
 
-              CustomListOfColorTask(theme: theme,),
+              CustomListOfColorTask(theme: theme),
               SizedBox(
                 height: SizeManager.appSizeHeight(
                   context: context,
@@ -101,7 +99,15 @@ class AddTask extends StatelessWidget {
               BuildContainer(
                 theme: theme,
                 action: MyString.createTask,
-                onPressed: () {},
+                onPressed: () {
+                  taskDatabase.insertData(
+                    title: taskCubit.titleController.text,
+                    note: taskCubit.noteController.text,
+                    startTime: taskCubit.startTimeController.text,
+                    endTime: taskCubit.endTimeController.text,
+                    color: 1,
+                  );
+                },
                 color: AppColor.primaryLightColor,
               ),
               SizedBox(
@@ -117,6 +123,3 @@ class AddTask extends StatelessWidget {
     );
   }
 }
-
-
-

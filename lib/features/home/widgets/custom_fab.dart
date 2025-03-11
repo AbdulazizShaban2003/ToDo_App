@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/core/utils/size_manager.dart';
-import 'package:todo_app/features/home/views/task_view.dart';
+import 'package:todo_app/features/task/persentation/view/task_view.dart';
 
 import '../../../core/themes/app_color.dart';
 

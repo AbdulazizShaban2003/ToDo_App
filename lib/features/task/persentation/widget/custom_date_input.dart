@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/themes/app_color.dart';
-import '../../../core/utils/app_strings.dart';
-import '../../../core/utils/size_manager.dart';
-import '../controller/task_controller.dart';
+import '../../../../core/themes/app_color.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/size_manager.dart';
+import '../../../states/cubit/task_cubit.dart';
 
 class CustomDateInput extends StatelessWidget {
   const CustomDateInput({
     super.key,
     required this.theme,
-    required this.taskController,
   });
 
   final TextTheme theme;
-  final TaskController taskController;
 
   @override
   Widget build(BuildContext context) {
-    final taskController = Provider.of<TaskController>(context);
+    final taskCubit = context.read<TaskCubit>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -29,11 +28,11 @@ class CustomDateInput extends StatelessWidget {
         ),
         TextFormField(
           style: theme.displayMedium,
-          controller: taskController.dateController,
+          controller:   taskCubit.dateController,
           readOnly: true,
           decoration: InputDecoration(
             suffixIcon: InkWell(
-              onTap: () => taskController.selectDate(context),
+              onTap: () =>  context.read<TaskCubit>().selectDate(context),
               child: Icon(
                 Icons.calendar_month_rounded,
                 color: AppColor.whiteColor,

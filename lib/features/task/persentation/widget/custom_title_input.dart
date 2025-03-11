@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/utils/app_strings.dart';
-import '../../../core/utils/size_manager.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/utils/size_manager.dart';
+import '../../../states/cubit/task_cubit.dart';
 
 class CustomTitleInput extends StatelessWidget {
   const CustomTitleInput({super.key, required this.theme});
@@ -10,6 +12,8 @@ class CustomTitleInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final taskCubit = context.read<TaskCubit>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -18,6 +22,7 @@ class CustomTitleInput extends StatelessWidget {
           height: SizeManager.appSizeHeight(context: context, heightApp: 0.02),
         ),
         TextFormField(
+          controller: taskCubit.titleController,
           decoration: InputDecoration(hintText: MyString.hintTextTitle),
         ),
       ],
