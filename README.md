@@ -59,9 +59,9 @@ The app uses the following packages:
 - `sqflite: ^2.0.0+4`
 - `timezone: ^0.9.2`
 - `flutter_timezone: ^1.0.7`
-- 'shared_preferences: ^2.5.2'
-- ' intl: ^0.19.0'
-- ' workmanager: ^0.5.2'
+- `shared_preferences: ^2.5.2`
+- `intl: ^0.19.0`
+- `workmanager: ^0.5.2`
 
 
 Make sure to add these dependencies to your `pubspec.yaml` file before running the app.
