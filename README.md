@@ -10,12 +10,6 @@ A simple TODO app built using Flutter that helps you manage your tasks efficient
 - Set task priorities.
 - Receive local notifications for upcoming tasks.
 
-## Screenshots
-
-<img src="1.png" alt="Light Theme homepage" width="400">
-<img src="2.png" alt="Dark Theme homepage" width="400">
-<img src="3.png" alt="Add Task Page" width="400">
-
 ## Getting Started
 
 Follow these instructions to get the project up and running on your local machine.
@@ -56,14 +50,18 @@ Follow these instructions to get the project up and running on your local machin
 The app uses the following packages:
 
 - `cupertino_icons: ^1.0.2`
-- `get_storage: ^2.0.3`
-- `get: ^4.3.8`
+- `get_storage: ^3.0.2`
+- `lottie: ^4.3.8`
 - `flutter_local_notifications: ^15.1.0+1`
-- `intl: ^0.18.1`
+- `get_it: ^0.18.1`
 - `google_fonts: ^5.1.0`
 - `date_picker_timeline: ^1.2.3`
 - `sqflite: ^2.0.0+4`
 - `timezone: ^0.9.2`
 - `flutter_timezone: ^1.0.7`
+- 'shared_preferences: ^2.5.2'
+- ' intl: ^0.19.0'
+- ' workmanager: ^0.5.2'
+
 
 Make sure to add these dependencies to your `pubspec.yaml` file before running the app.
